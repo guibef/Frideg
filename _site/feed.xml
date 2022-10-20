@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2022-10-20T02:31:07-06:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Frideg</title><subtitle>Frideg, not fridge, pronounced as Fried Egg, comes from the first three letters of Friday and Degree,  is a place where I write my blogs.  It can be tech-related topics or just some random thoughts.</subtitle><author><name>Guibin</name></author><entry><title type="html">How to Build a Blog</title><link href="http://localhost:4000/blog/expression/2022/10/19/jekyll-blog.html" rel="alternate" type="text/html" title="How to Build a Blog" /><published>2022-10-19T00:00:00-06:00</published><updated>2022-10-19T00:00:00-06:00</updated><id>http://localhost:4000/blog/expression/2022/10/19/jekyll-blog</id><content type="html" xml:base="http://localhost:4000/blog/expression/2022/10/19/jekyll-blog.html"><![CDATA[]]></content><author><name>Guibin</name></author><category term="Expression" /><category term="Jekyll" /><category term="Blog" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Vim Setup and Basics</title><link href="http://localhost:4000/blog/productivity/2022/10/19/vim.html" rel="alternate" type="text/html" title="Vim Setup and Basics" /><published>2022-10-19T00:00:00-06:00</published><updated>2022-10-19T00:00:00-06:00</updated><id>http://localhost:4000/blog/productivity/2022/10/19/vim</id><content type="html" xml:base="http://localhost:4000/blog/productivity/2022/10/19/vim.html"><![CDATA[]]></content><author><name>Guibin</name></author><category term="Productivity" /><category term="Vim" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Zsh Terminal Autocompletion</title><link href="http://localhost:4000/blog/productivity/2022/10/17/terminal-zsh-autocomplettion.html" rel="alternate" type="text/html" title="Zsh Terminal Autocompletion" /><published>2022-10-17T00:00:00-06:00</published><updated>2022-10-17T00:00:00-06:00</updated><id>http://localhost:4000/blog/productivity/2022/10/17/terminal-zsh-autocomplettion</id><content type="html" xml:base="http://localhost:4000/blog/productivity/2022/10/17/terminal-zsh-autocomplettion.html"><![CDATA[<h2 id="install-zsh">Install Zsh</h2>
+<p>for Debian based distro</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo apt install zsh</code></p>
+
+<p>set zsh as the default shell</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo chsh -s $(which zsh) ${USER}</code></p>
+
+<h2 id="zsh-config">Zsh Config</h2>
+<p>save in <code class="language-plaintext highlighter-rouge">~/.zshrc</code>, use <code class="language-plaintext highlighter-rouge">source ~/.zshrc</code> to apply</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PREFERENCE
+
+# enable vi mode
+bindkey -v 
+
+# AUTOCOMPLETION
+
+# initialize autocompletion
+autoload -Uz compinit &amp;&amp; compinit
+
+# history setup
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+
+# autocompletion using arrow keys (based on history)
+bindkey '^[OA' history-beginning-search-backward
+bindkey '^[OB' history-beginning-search-forward
+
+# USER PROMPT
+   
+# enable command-subsitution in PS1
+setopt PROMPT_SUBST
+NL=$'\n'
+PS1='$NL%B%F{cyan}%3~%f%b$NL%B%(?.%F{green}.%F{red})%(!.#.$)%f%b' 
+
+# PLUGINS
+
+source ~/.zsh/plugins/zsh-z/zsh-z.plugin.sh
+
+# Zsh-z plugin options
+ZSH_CASE=smart # lower case patterns are treated as case insensitive
+zstyle ':completion:*' menu select # improve completion menu style
+</code></pre></div></div>
+
+<h2 id="autocompletion">Autocompletion</h2>
+<p>check <code class="language-plaintext highlighter-rouge">man zshcomsys</code> for compinit</p>
+
+<p>check <code class="language-plaintext highlighter-rouge">man zshoptions</code> and <code class="language-plaintext highlighter-rouge">man zshparam</code> for history setup</p>
+
+<p>check <code class="language-plaintext highlighter-rouge">man zshzle</code> for bindkey, <code class="language-plaintext highlighter-rouge">ctrl + v</code> in terminal to find arrow keys’ code, e.g. <code class="language-plaintext highlighter-rouge">^[OA</code> is up arrow and <code class="language-plaintext highlighter-rouge">^[OB</code> is down arrow in wsl2 Ubuntu and ChromeOS Debian</p>
+
+<h2 id="user-prompt">User Prompt</h2>
+<p>check <code class="language-plaintext highlighter-rouge">man zshmics</code> for prompt</p>
+
+<h3 id="ps1-code">PS1 code</h3>
+<p><code class="language-plaintext highlighter-rouge">%B (%b)</code>, boldface</p>
+
+<p><code class="language-plaintext highlighter-rouge">%F (%f)</code>, foreground color</p>
+
+<p><code class="language-plaintext highlighter-rouge">%3~</code>, current working directory, showing trailing <code class="language-plaintext highlighter-rouge">3</code>, replacing <code class="language-plaintext highlighter-rouge">$HOME</code> with <code class="language-plaintext highlighter-rouge">~</code>; <code class="language-plaintext highlighter-rouge">0</code> will show absolute path</p>
+
+<p><code class="language-plaintext highlighter-rouge">$NL</code>, new line, using variable <code class="language-plaintext highlighter-rouge">NL=$'\n'</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">%(?.%F{green}.%F{red})</code>, green if last command is success, red if error</p>
+
+<p><code class="language-plaintext highlighter-rouge">%(!.#.$)</code>, <code class="language-plaintext highlighter-rouge">#</code> if privilege, <code class="language-plaintext highlighter-rouge">$</code> is non-privilege</p>
+
+<h2 id="plugins">Plugins</h2>
+<h3 id="zsh-z">Zsh-z</h3>
+<p>install</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> ~/.zsh/plugins/zsh-z
+
+curl https://raw.githubusercontent.com/agkozak/zsh-z/master/zsh-z.plugin.zsh <span class="se">\</span>
+<span class="nt">-o</span> ~/.zsh/plugins/zsh-z/zsh-z.plugin.sh
+</code></pre></div></div>
+
+<p>add <code class="language-plaintext highlighter-rouge">source ~/.zsh/plugins/zsh-z/zsh-z.plugin.sh</code> to <code class="language-plaintext highlighter-rouge">~/.zshrc</code></p>]]></content><author><name>Guibin</name></author><category term="Productivity" /><category term="Terminal" /><category term="Zsh" /><summary type="html"><![CDATA[Install Zsh for Debian based distro]]></summary></entry></feed>
