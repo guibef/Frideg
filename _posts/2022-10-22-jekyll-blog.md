@@ -35,7 +35,7 @@ Use a theme as a starting point, for example [Yat Theme](https://github.com/jeff
 
 Understand the basics about Jekyll site following this [step by step tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)
 
-## Build Jekyll site locally
+## Build Jekyll Site Locally
 
 ### Build and run
 

@@ -3,7 +3,7 @@ layout: post
 title: Zsh Terminal Autocompletion
 subtitle: History based and Zsh-z autocompletion, user prompt customization
 categories: Productivity
-tags: [Terminal, Zsh, Shell]
+tags: [Terminal, Zsh, Shell, Config]
 ---
 
 ## Install Zsh
