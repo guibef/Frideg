@@ -89,4 +89,4 @@ set laststatus=2
 ### Modifier
 - `ci(` change inside `()`
 - `ca[` change around `[]`
-- `di'` delete around `''` 
+- `di'` delete inside `''` 

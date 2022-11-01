@@ -6,7 +6,7 @@ categories: Tutorials
 tags: [Jekyll, Blog]
 ---
 
-Instructions are based on ChromeOS Debian
+Instructions are based on ChromeOS Debian Linux
 
 ## Install [Jekyll](https://jekyllrb.com/docs/)
 
@@ -31,7 +31,7 @@ export PATH="$HOME/gems/bin:$PATH"
 
 ## Clone a [Jekyll Theme](https://jekyllrb.com/docs/themes/) 
 
-Use a theme as a starting point, for example [Yat Theme](https://github.com/jeffreytse/jekyll-theme-yat) which is what this blog site built upon
+Use a theme as a starting point, for example [Yat Theme](https://github.com/jeffreytse/jekyll-theme-yat) which is what this blog site is built upon
 
 Understand the basics about Jekyll site following this [step by step tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/)
 
