@@ -2,6 +2,6 @@
 layout: post
 title: ChromeOS Basics
 subtitle: 
-categories: Fundamentals
+categories: Basics
 tags: [OS]
 ---

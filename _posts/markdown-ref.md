@@ -2,6 +2,6 @@
 layout: post
 title: Markdown Quick Reference
 subtitle: 
-categories: Fundamentals
+categories: Basics
 tags: [Markdown]
 ---
