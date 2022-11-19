@@ -44,16 +44,16 @@ tags: [Command, Shell]
 
 `grep`, global regular expression print, for searching
 
-`diff`, show difference, `<()`
+`diff`, show difference, `diff fileA fileB`
 
 `find`, find files, eg. `find . -name '*.jpg' -exec mv {} ./jpg \;`
 
 ## Process
-`ps`, process status, [aux] for all
+`ps`, process status, `aux` for all
 
 `jobs`, status of jobs
 
-`fg` / `bg`, foreground / background a process, % with job number
+`fg` / `bg`, foreground / background a process, `%` with job number
 
 `&`, suffix to run in background
 
