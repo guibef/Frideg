@@ -24,7 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Frideg
+title: FriDeg
 email: ""
 author: Guibin
 
@@ -43,7 +43,7 @@ author: Guibin
 copyright: "Blog (cleft) 2022-{currentYear} {author}"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Frideg, not fridge, pronounced as Fried Egg, comes from the first three letters of Friday and Degree, 
+  FriDeg, not fridge, pronounced as Fried Egg, comes from the first three letters of Friday and Degree, 
   is a place where I write my blogs.  It can be tech-related topics or just some random thoughts.
 
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -156,7 +156,7 @@ header_pages:
 # Page default value
 defaults:
   home:
-    heading: "Frideg.com"
+    heading: "FriDeg.com"
     subheading: "Welcome, this is Fried Egg dot com."
     banner: "Your image url"
 
